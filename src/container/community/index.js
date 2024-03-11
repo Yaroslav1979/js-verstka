@@ -14,6 +14,79 @@ const title = createElement('h1', 'title', "Ком'юніті")
 page.append(title)
 
 
+//---------------------------------------------------------------
+
+const createKnowledgeBase = () => {
+    const tabsContainer = createElement('div', 'tabs');
+    const knowledgeTabButton = createElement('button', 'tab', 'База знань');
+    const infoTabButton = createElement('button', 'tab', 'Інформація');
+    const mainContent = createElement('main', 'post__list');
+
+    const heroImage = createElement('img', 'hero');
+    heroImage.src = '/img/visitka.png';
+    heroImage.alt = 'hero';
+
+    const subtitle = createElement('h2', 'subtitle', 'Що таке база знань?');
+
+    const postInfo = createElement('p', 'post__info');
+    postInfo.innerHTML = 'База знаний — база данных, содержащая правила ' +
+        'вывода и информацию о человеческом опыте и ' +
+        'знаниях в некоторой предметной области. ' +
+        'В самообучающихся системах база знаний также ' +
+        'содержит информацию, являющуюся результатом решения ' +
+        'предыдущих задач.';
+
+    const telegramLink = createElement('a', 'link', 'Перейти до ком\'юніті у Телеграм');
+    telegramLink.href = '#';
+
+    // Додаємо створені елементи до відповідних контейнерів
+    tabsContainer.appendChild(knowledgeTabButton);
+    tabsContainer.appendChild(infoTabButton);
+
+    mainContent.appendChild(heroImage);
+    mainContent.appendChild(subtitle);
+    mainContent.appendChild(postInfo);
+    mainContent.appendChild(telegramLink);
+
+    // Створюємо об'єкт для повернення контейнера
+    const knowledgeBase = {
+        tabsContainer,
+        mainContent,
+    };
+
+    return knowledgeBase;
+};
+const knowledgeBase = createKnowledgeBase();
+
+// Додаємо контейнери до сторінки
+page.appendChild(knowledgeBase.tabsContainer);
+page.appendChild(knowledgeBase.mainContent);
+//-------------------------------------
+
+
+
+
+
+
+
+// const TAB_LIST = [
+//     {
+//         text: 'База знань', 
+//         id: 1
+//     },
+//     {
+//         text: 'Інформація',
+//         id: 2
+//     },
+// ]
+
+// const createTabs = () => {
+//    const tabs = createElement('div', 'tabs')
+// }
+
+
+
+
 // const POST_LIST = [
 //     {
 //         category: [

@@ -35,6 +35,7 @@ export const createHeader = () => {
         Object.entries(params).forEach(([key, value]) => {
             img[key] = value
         })
+        
         button.append(img)
 
         header.append(button)
